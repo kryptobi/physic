@@ -1,0 +1,346 @@
+\documentclass[8pt]{article}
+\usepackage{a4wide}
+
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{mathtools}
+%\usepackage{amsmath}
+
+\usepackage{geometry}
+\geometry{a4paper,left=2cm,right=2cm, top=1cm, bottom=2cm} 
+\begin{document}
+\noindent
+\textbf{{\large -Messfehler}}\\ \\
+\noindent
+Unterschied Messwert zu wahren unbekannten Wert / Systematische Fehler / Zufällige Fehler\\
+Syst. Fehler = Fehler des Verfahrens der Messtechnik\\
+Zuf. Messfehler = Fehler zeigt sich in Streeung bei Wiederholung der Messung\\ \\
+arithmetisches Mittel = $<x> = \frac{1}{n} \sum_{i=1}^n x_i$, n = Anzahl der messungen, $x_i$ einzelne Messungen\\
+min. der quadratischen Abweichung = $min = \sum_{i=0}^n(<x>-<x_i>)^2$\\
+Streuung / Standardabweichung = $\sigma = \sqrt{\frac{1}{n-1}\sum_{i=1}^n (x_i-<x>)^2}$, (Standardabweichung der Einzelmessung) \\
+Varianz = $\sigma^2$
+Abweichung des Mittelwerts = $\sigma_m = \frac{\sigma}{\sqrt{n}}$ \\ \\
+absolute Messunsicherheit = Mittelwert + $\sigma_m$ \\
+$\rightarrow l=(1,234 \pm 0,008)$ \\ \\
+relative Messunsicherheit\\
+absolute Messunsicherheit = $u(x)$, relative Messunsicherheit = $u(x)/<x>$ \\
+\noindent
+$\rightarrow$ aus $d=(7,71 \pm 0,09)mm$ wird $d=7,71 * (1 \pm 1,1\%)mm$\\ \\
+\noindent
+Fehlerfortpflanzung \\
+bei Addition/Subtraktion der Messwerte $\rightarrow$ Addition der abs. Messunsicherheit \\
+bei Mutliplikation/Division der Messwerte $\rightarrow$ Addition der relativen Messunsicherheit\\ \\
+\noindent
+Gaußkurve (Normalverteilung) $f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-<x>)^2}{2\sigma^2}}$ 
+\\ \\
+\textbf{{\large -Kinematik}} \\ \\
+\noindent
+\textbf{Bewegung Massepunkt}\\
+Massepunkt bewegt sich auf einer kurve / Ortsvektor $\overrightarrow{r}(t)$ \\
+mittlere Geschwindigkeit = $<\overrightarrow{v}> = \frac{ \bigtriangleup \overrightarrow{r}}{\bigtriangleup t}$ \\
+momentane Geschwindigkeit = $\overrightarrow{v} = \frac{d \overrightarrow{r}}{dt} = \dot{\overrightarrow{r}}$ \\
+$\vec{r}(t)=\left(\begin{array}{c} x(t) \\ y(t) \\ z(t) \end{array}\right)
+,
+\overrightarrow{v}(t)=\vec{r}'(t)=\left(\begin{array}{c} x'(t) \\ y'(t) \\ z'(t) \end{array}\right)
+,
+\overrightarrow{a}(t)=\overrightarrow{v}'(t)=\vec{r}''(t)=\left(\begin{array}{c} x''(t) \\ y''(t) \\ z''(t) \end{array}\right)$  \\
+Betrag der Geschwindigkeit = $|\overrightarrow{v}(t)| = \sqrt{x'(t)^2+y'(t)^2+z'(t)^2}$ \\
+momentane Beschleunigung = $a = \frac{d\overrightarrow{v}}{dt}$ \\
+Weg = Fläche unter der Kurve = $x(t) = v_{x0} t$
+\\ \\
+\noindent
+\textbf{geradlinige Bewegung}
+\\
+\noindent
+\begin{tabular}{|c|c|c|}
+\hline 
+allgemein &  &  \\ 
+\hline 
+Strecke, Ort & $x(t)$ & $x(t)=x_0 + \int \limits_0^t v_x(t')dt'$ \\ 
+\hline 
+Geschwindigkeit & $v_x(t) = \frac{dx}{dt} = x'$ & $v(t)=v_{x0}+\int \limits_0^t a_x(t')dt'$ \\ 
+\hline 
+Beschleunigung & $a_x(t)=\frac{dv_x}{dt} = v_x' = x''$ & $a_x(t)$ \\ 
+\hline 
+\end{tabular} \\ \\
+\textbf{geradlinige Bewegung , konstante Geschwindigkeit, konstante Beschleunigung }\\
+\noindent
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+ & allgemein &  & v const. & gl. beschl\\ 
+\hline 
+Strecke,Ort & $x(t)$ & $x(t)=x_0 + \int \limits_0^t v_x(t')dt' $ & $x(t) = x_0+v_{x0}t$ & $x(t)=x_0+v_{x0}+\frac{1}{2}a_{x0}t^2$\\ 
+\hline 
+Geschwind & $v_x(t)=\frac{dx}{dt} =x'$ & $v(t)=v_{x0} + \int \limits_0^t a_x(t')dt'$ & $v_x(t) = v_{x0}$ & $v_x(t)=v_{x0} + a_{x0}t$\\ 
+\hline 
+Beschl & $a_x(t)=\frac{dv_x}{dt}=v_x'=x''$ & $a_x(t)$ & $a_x(t)=0$ & $a_x(t)=a_{x0} = konst$\\ 
+\hline 
+\end{tabular}  \\ \\
+\textbf{Veränderliche Beschleunigung} \\ 
+\noindent
+\begin{tabular}{|c|c|c|}
+\hline 
+ & allgemein &  \\ 
+\hline 
+Strecke, Ort & $x(t)$ & $x(t)=x_0 + \int \limits_0^t v_x(t')dt'$ \\ 
+\hline 
+Geschwindigkeit & $v_x(t) = \frac{dx}{dt} = x'$ & $v(t) = v_{x0} + \int \limits_0^t a_x(t')dt'$ \\ 
+\hline 
+Beschleunigung & $a_x(t)=\frac{dv_x}{dt}=v_x'=x''$ & $a_x(t)$ \\ 
+\hline 
+\end{tabular} 
+\newpage
+\noindent
+\textbf{freier Fall}\\
+gleichmäßig beschleunigte Bewegung\\
+Weg, Höhe  $x(t) = h - \frac{1}{2}gt^2$\\
+Geschwindigkeit $v_x(t)=-gt$\\
+Fallzeit $t_{fall} = \sqrt{\frac{2h}{g}}$\\
+$g = 9,81 \frac{m}{s^2}$ \\ \\
+\noindent
+\textbf{waagerechter Wurf}\\
+Flugzeit = Fallzeit freier Fall\\
+Geschwindigkeit $\vec{v}(t_fall)=\left(\begin{array}{c} v_x(t_fall) \\ v_y(t_fall) \end{array}\right)$ \\
+Betrag der Geschwindigkeit $|\overrightarrow{v}| = \sqrt{v_x^2+v_y^2}$ \\ \\
+\noindent
+\textbf{Kreisbewegung}\\
+Winkelgeschwindigkeit $\omega = \frac{d\Theta}{dt} = const = 2\pi f = \frac{2\pi}{T}$ \\
+Ortsvektor $\vec{r}(t)=\left(\begin{array}{c} x(t) \\ y(t) \end{array}\right) = \left(\begin{array}{c} r cos(\omega t + \Theta_0)\\ r sin(\omega t + \Theta_0) \end{array}\right)$\\
+Geschwindigkeitvektor $\vec{v}(t)=\left(\begin{array}{c} v_x(t) \\ v_y(t) \end{array}\right) = \left(\begin{array}{c} -\omega r sin(\omega t + \Theta_0)\\ \omega r cos(\omega t + \Theta_0) \end{array}\right)$ \\
+Betrag der Geschwindigkeit $|\overrightarrow{v}(t)|=v=\omega r$\\
+Beschleunigungsvektor $\vec{a}(t)=\left(\begin{array}{c} a_x(t) \\ a_y(t) \end{array}\right) = \left(\begin{array}{c} -\omega^2 r cos(\omega t + \Theta_0)\\ -\omega^2 r sin(\omega t + \Theta_0) \end{array}\right)$ \\
+Betrag der Beschleunigung $|\overrightarrow{a}(t)| = \omega^2 r = \frac{v^2}{r}$ = Radialbeschleunigung (steht senkrecht zum Radius(gleiche Richtung wie v))\\
+$|\overrightarrow{a_t}| = \alpha r$ = Bahnbeschleunigung (Parallel zum Radius entgegengesetzt)\\
+$\alpha = \frac{d\omega}{dt} [\frac{rad}{s^2}]$ = Winkelbeschleunigung \\ \\
+
+
+
+\noindent
+\textbf{{\large -Kraft, Arbeit, Energie und Leistung}}\\ \\
+\noindent
+\textbf{Kräfte}\\
+Ursache zur Änderung des Bewegungszustands eines Körpers / Bewirken Änderung der Geschwindkeit / Vektorsummer aller angreifenden Kräfte am Körper = 0 \\
+Kräfte werden vektoriell addiert $\overrightarrow{F}_{ges} = \sum_{i=1}^N \overrightarrow{F}_i$\\
+Freikörperbild = Zeigt alle am Körper angreifende Kräfte ohne Umgebung\\
+eingeprägte Kräfte = physikalische Ursachen / Gewichtskraft / Muskelkraft \\
+Zwangskräfte = Reaktionskräfte / Normalkraft \\
+Normalkraft wirkt der Gewichtskraft ($m*g$) entgegen - Sie ist immer senkrecht zur Auflagefläche\\ \\
+\noindent 
+Impuls = $\overrightarrow{p} = m\overrightarrow{v} [\frac{kgm}{s}]$ \\
+eine physikalische Bewegungsgröße die unterschiedliches Verhalten von bewegten Körpern bei gleicher Geschwindigkeit berücksichtigt. \\
+1. Newtonsches Axiom = Ein Körper bleibt in Ruhe oder bewegt sich mit konstanter Geschwindigkeit. Die Vektorsummer aller Kräfte ist null.\\
+2.Newtonsche Axiom = Kraft führt zu einer zeitlichen Änderung des Impuls. \\
+$\overrightarrow{F}=\overrightarrow{p}' = \frac{d}{dt}(m\overrightarrow{v})= m*\overrightarrow{a} [\frac{kgm}{s^2}=N]$\\
+3. Newtonsche Axiom = Kräfte treten immer paarweise auf.Actio = Reactio.\\
+$\overrightarrow{F}=\overrightarrow{-F}$ \\ \\
+\noindent
+\textbf{Reibung}\\
+Tritt auf, wenn sie zwei berührende Körper relativ zueinander bewegen.\\
+Haftreibung = Wirkt der angreifenden Kraft entgegen / Ist proportional zur Normalkraft des Körpers / \\
+$F_h = \mu_h * F_n$ \\
+Gleitreibung = Wirkt der angreifenden Kraft entgegen / Ist proportional zur Normalkraft / \\
+$F_g=\mu_g*F_n$\\
+Die Gleitreibungskraft ist immer kleiner als die Haftreibungskraft.
+\newpage
+\noindent
+\textbf{Arbeit}\\
+Arbeit ist das Produkt aus der wirkenden Kraft  und des Weges entlang der Kraftrichtung\\
+$W = \int \limits_{Weg} = \overrightarrow{F}*d\overrightarrow{r} [Nm = J]$\\
+Hubarbeit = $W_G=m*g*h$\\
+kinetische Energie = $W_{kin} = \frac{1}{2}mv^2 [1kgm^2/s^2 = Nm = J]$ auch Beschleunigungsarbeit genannt\\
+Verformungsarbeit (Feder) = $F_f = -c*s$ , c ist die Federkonstante $[\frac{N}{m}]$ \\
+Spannarbeit (Feder) = $W_f = \frac{1}{2}cs^2$ \\ \\
+\noindent
+\textbf{Energieerhaltung}\\
+In einem abgeschlossenen System ist die Gesamtenergie, Summe aus pot. Energie und kin. Energie, zeitlich konstant.\\
+$E_{kin} = E_{pot}+E_{kin}$\\
+Bei einem freien Fall oder Fadenpendel wird aus pot. Energie, kin. Energie, d.h. $E_{pot} = E_{kin}$ \\ \\
+\noindent
+\textbf{Leistung}\\
+Arbeit pro Zeiteinheit\\
+$P(t) = \frac{dW(t)}{dt} = \overrightarrow{F}*\overrightarrow{v} [1 Watt = 1W = 1 J/s = 1 Nm/s]$ \\
+1 PS = 737,5 W\\
+mechanischer Wirkungsgrad = $\eta = \frac{abgebene Leistung}{zu geführte Leistung}$ \\ \\
+\noindent
+\textbf{Impuls und Drehimpuls}\\
+Mit dem Impuls und der Impulserhaltung lassen sich Vorgänge nach einem Stoß vorhersagen.\\
+Impulssatz = $\sum \int \limits_{t_1}^{t_2} \overrightarrow{F}dt = m\overrightarrow{v}_2-m\overrightarrow{v}_1$ \\
+Kraftstoß = Kraft ändert sich mit Zeit \\
+$\overrightarrow{K} = \int \limits_{t_1}^{t_2}\overrightarrow{F}dt$ \\ \\
+\noindent
+Impulserhaltung $\sum m_i(\overrightarrow{v_i})_1 = \sum m_i(\overrightarrow{v_i})_2$ \\ \\
+\noindent
+\textbf{Stoßvorgänge}\\
+gerade zentraler Stoß = Bewegungsrichtung der beteiligten Masse liegen auf einer Geraden. Beide Massen(A und B) erfahren einen Kraftstoß. Die inneren Kraftstöße heben sich gegenseitig auf, doch der Gesamtimpuls bleibt gleich. \\
+$m_a*v_{a1}+m_b*v_{b1} = m_a*v_{a2} + m_b*v_{b2}$ \\
+Stoßzahl = Elastischer Stoß e =1 / unelastischer Stoß e = 0 $\rightarrow$ Die Massen bleiben zusammen und bewegen sich gemeinsam weiter 
+\\$e = \frac{v_{b2}-v_{a2}}{v_{a1}-v_{b1}}$ \\ \\
+\noindent
+\textbf{Drehimpuls Massepunkt}\\
+beschreibt den Moment des Impulses bezüglich eines Bezugpunktes. \\
+$\overrightarrow{L} = \overrightarrow{r} \times m\overrightarrow{v} [kgm^2/s]$ \\
+Drehimpulserhaltung = $L_1 = L_2$\\ \\
+\noindent
+\textbf{Drehmoment}\\
+Das resultierende Moment ist gleich der zeitlichen Änderung des Drehimpuls des Massepunktes.\\
+$\sum \overrightarrow{M} = \overrightarrow{r} \times \sum \overrightarrow{F} = F*r [Nm]$ \\ \\
+\noindent 
+\textbf{starre Körper}\\
+idealisierter makroskopische Körper, dessen Massenpunkte unveränderliche Abstände voneinander haben. \\ \\
+\noindent
+Schwerpunkt = $x_s = \frac{m_1x_1 + m_2x_2}{m_1+m_2}$ \\ \\
+\noindent
+Allgemein ebene Bewegung = Kombination aus Translation und Rotation. Die Gesamtverschiebung eines Körpers = Verschiebung durch Translation A + Verschiebung durch Rotation von B um A.\\
+Geschwindigkeit = $v_{si} = \omega r_{rsi}$ , Dabei steht die Richtung senkrecht auf $r_{si}$ \\
+Strecke = $s_{sp} = r\Theta$ \\
+Beschleunigung = $a_{sp} = r\alpha$ \newpage
+\noindent
+\textbf{Massenträgheitsmoment}\\
+Drehimpuls des starren Körpers = $L_i = m_iv_ir_i = m_ir_i^2\omega$\\
+Summe über alle Massepunkte = $L=\sum_i m_i r_i^2 \omega = J_s \omega$\\
+Massenträgheitsmoment = 
+$J_s = \sum_i m_i r_i^2 [kgm^2]$\\
+bei veränderlicher Dichte = $J_s = \int \limits_m r^2dm = \int \limits_V \rho dV$\\
+Steinerscher Satz (Wenn die Achse um die sich ein Körper dreht nicht der Mittelpunkt ist)\\
+$J = J_s md^2$ , d = Abstand zur Achse \\
+Momente aller äußeren Kräfte = $M = J_s \alpha$
+Energie = $E_{rot} = \frac{1}{2}J_s \omega^2$ \\
+kin. Energie = $E_{kin}=\frac{1}{2}mv^2+\frac{1}{2}J\omega^2$ \\
+Arbeit = $W = M\Theta$ \\
+Drehimpulserhaltung  = $(J_s\omega)_1 = (J_s\omega)_2$ \\ \\
+\noindent
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Translation &  & Rotation &  \\ 
+\hline 
+Größe & Einheit & Größe & Einheit \\ 
+\hline 
+Masse m & kg & Massenträgheitsmoment $J=\int r^2 dm$  & $kgm^2$ \\ 
+\hline 
+Kraft $\overrightarrow{F} m \overrightarrow{a}$ & N & Drehmoment $\overrightarrow{M} = J\overrightarrow{\alpha} = \frac{d\overrightarrow{L}}{dt}$ & Nm \\ 
+\hline 
+Impuls $\overrightarrow{p}=m\overrightarrow{v}$& Ns & Drehimpuls $\overrightarrow{L} = J\overrightarrow{w}$ & NMs \\ 
+\hline 
+Arbeit $dW = \overrightarrow{F}d\overrightarrow{r}$ & Nm = J & Arbeit $dW = \overrightarrow{M}d\overrightarrow{\varphi}$ & Nm = J \\ 
+\hline 
+kin. Energie $W_{kin}=\frac{1}{2}mv^2$ & Nm = J & kin. Energie $W_{kin} = \frac{1}{2}J\omega^2$ & Nm = J\\ 
+\hline 
+Leistung $P=\frac{dW}{dt}=\overrightarrow{F}*\overrightarrow{v}$ & J/s = W & Leistung $P=\frac{dW}{dt}=\overrightarrow{M}*\omega$ & J/s = W \\ 
+\hline 
+\end{tabular} 
+
+
+
+
+
+\newpage
+\noindent
+{\large \textbf{-Schwingung}}\\ \\
+\textit{-Frequenz:}\\ Anzahl der Zyklen pro Zeitinterval \\
+$f = \frac{1}{T}$ - Einheit : $1 \frac{1}{s} = 1 Hz$ 
+\textit{-Amplitude:} \\ Maximale Auslenkung \\ \\
+\noindent
+\textbf{Harmonischer Oszillator:}\\
+Bewegungsgleichung: $y(t) = \hat{y}sin(\phi t+\phi_0) $\\
+wobei $\phi t = \omega t$ und $\omega = \frac{2 \pi}{T} = 2\pi f$ - Einheit $[\omega] = \frac{rad}{s} = \frac{1}{s}$ \\
+$\rightarrow y(t) = \hat{y}sin(\omega t + \phi_0)$ \\ \\
+1. Ableitung = Geschwindigkeit : \\
+$v(t) = y'(t) = \hat{y} \omega cos(\omega t)$ \\
+$v_{max} = \hat{y \omega} = \hat{v}$ \\ \\
+2. Ableitung = Beschleunigung : \\
+$a(t) = v'(t) = y''(t) = -\hat{y} \omega^2 sin(\omega t)$ \\
+$a_{max}=\hat{y} \omega^2 = \hat{a} $ \\ \\ 
+\noindent
+\textbf{Federpendel}\\
+stabile Ruhelage / rücktreibene Kraft / Trägheit führt zu Überschwingen / max. Auslenkung = $E_{pot}$ / Bei Nulldurchgang = $E_{kin}$ \\ \\
+Linearität: \\
+$F = -D * s = m * a$ - Einheit $[D] = \frac{N}{m}$ \\
+DGL des Federpendels = 
+$s'' + \frac{D}{m}s = 0$ \\
+Schwingung des Federpendels: $\omega_0^2 = \frac{D}{m}$ \\
+potentielle Energie = $E_{pot} = \frac{1}{2}Ds^2$ \\
+kinetische Energie = $E_{kin} = \frac{1}{2}mv^2$ \\
+Energieerhaltung = $E = E_{pot} + E_{kin} = const = \frac{1}{2}Ds^2 = \frac{1}{2}mv^2$  \\ \\
+\noindent
+\textbf{Fadenpendel}\\
+mathematisches Pendel / ausgelenkte Kugel an Faden \\ \\
+\noindent
+Bewegungsgleichung
+$F_t = ma \rightarrow -mg sin\theta = ma_t $ \\
+DGL des Fadenpendels = $\theta'' + \frac{g}{l} sin \theta = 0$ \\
+Rückstellkraft = $F_r = -mg sin\theta$ \\
+Schwingungsgleichung = $\theta(t) = \hat{\theta}sin(\omega_0 t +\theta_0)$ \\
+Schwingung = $\omega_0 = \sqrt{\frac{g}{l}}$
+\\ \\
+\noindent
+\textbf{physikalisches Pendel}\\ 
+Drehmoment = $M = s \times F = s \times mg$ \\
+Betrag des Drehmoments = $|M|=s*mg*sin\phi$ (s = Abstand Achse zum Schwerpunkt)
+Newtonsche Bewegungsgleichung = $M = J_a * \phi'' $ mit $J_a = J_s + ms^2$\\
+Schwingungsgleichung = $\phi(t) = \hat{\phi}sin(\omega_0 t +\phi_0)$ \\
+Schwingung = $\omega = \sqrt{\frac{mgs}{J_a}}$
+\\ \\
+\noindent
+\textbf{Überlagerung von Schwingungen} - gleiche Frequenz\\
+Amplituden addieren sich = $\hat{s_1} = \hat{s_2} \rightarrow \hat{s_g} = \hat{s_1}+\hat{s_2}$ \\
+Ergebnisschwingung hängt vom Phasendifferenzwinkel ab\\ \\
+\noindent
+\textbf{Überlagerung von Schwingungen} - ungleiche Frequenz\\
+Zwei Schwingungen = $y_1(t) = \hat{y} sin(\omega_1 t)$ und $y_2(t) = \hat{y} sin(\omega_2 t)$\\
+Mittenkreisfrequenz = $\bar{\omega} = \frac{\omega_1 + \omega_2}{2}$\\
+Differenzkreisfrequenz = $\bigtriangleup\omega = \omega_2-\omega_1$ \\
+$\rightarrow  y(t)=2\hat{y}cos(\frac{1}{2}\bigtriangleup\omega t)sin(\bar{\omega}t)$ 
+\newpage
+\noindent
+\textbf{viskos gedämpfte Schwingung}\\
+Dämpfung durch Flüssigkeiten\\
+Reibungskraft proportional zur Geschwindigkeit = $F_{reib} = -rv = -r s'$
+$F=ma=ms''=-r*s'-D*s$\\
+Bewegungsgleichung = $s''+\frac{r}{m}s'+\frac{D}{m}s=0$ \\
+Üblich = $s''+2\delta*s'+\omega_0^2*s=0$\\
+Dämpfungsfaktor = $\delta = \frac{r}{2m}$ \\
+Eigenfrequenz = $\omega_0 = \sqrt{\frac{D}{m}}$ \\ \\
+\noindent
+\begin{tabular}{c|c|c}
+
+\textit{schwache Dämpfung} & & \textit{starke Dämpfung} \\ 
+
+$\delta < \omega_0$ & $\delta = \omega_0$ & $\delta > \omega_0$ \\ 
+
+$s(t)=C e^{-\delta t}sin(\omega_d t+\phi_d)$ & $s(t)=(C_1 t+C_2)e^{-\delta t}$ & $s(t)=C_1e^{(-\delta+\sqrt{\delta^2-\omega_0^2})t}+C_2e^{(-\delta-\sqrt{\delta^2-\omega_0^2})t}$ \\ 
+
+$\omega_d = \sqrt{\omega_d^2-\delta^2}$ &  &  \\ 
+Schwingfall & aperiodisch(keine Schw.) & aperiodisch(Kriechfall) \\ 
+\end{tabular} \\ \\
+\\Logarithmisches Dekrement(Dämpfungsverhältnis) = $ln(\frac{s(t_n)}{s(t_n+T_d)})=\delta T_d= \wedge$
+\\ \\
+\noindent
+\textbf{erzwungene gedämpfte Schwingung}\\
+Eine zusätzliche äußere Kraft die, die Masse m angreift.\\
+$F_a = \hat{F}sin(\omega_e t)$\\
+Bewegungsgleichung = $s''(t)+2\delta*s'(t)+\omega_0^2*s(t)=\frac{\hat{F}}{m}sin(\omega_e t)$\\
+Lsg der DGL= Einschwingvorgang+stationären Schwingzustand = $s(t) = C_1e^{-\delta t}sin(\omega_d t+\phi_0)+C_2sin(\omega_e t+\phi)$\\
+stationäre Lösung(Nach einschwingphase) = $s(t) = \hat{s}sin(\omega_e t-\phi)$\\
+Amplitude = $\hat{s}(\omega_e) = \frac{\hat{F}}{m\sqrt{(\omega_0^2-\omega_e^2)^2+(2\delta\omega_e)^2}}$\\
+Resonanz = $\omega_r = \sqrt{\omega_0^2-2\delta^2}$ \\
+Sehr kleine Erreger-Frequenz $\omega_e << \omega_0 = \sqrt{\frac{D}{m}}$ \\
+Sehr große Erreger-Frequenz $\omega_e > \omega_0 = \sqrt{\frac{D}{m}}$ \\
+Resonanzfall = $\omega_r = \sqrt{\omega_0^2 -2\delta^2}<\omega_d=\sqrt{\omega_0^2-\delta^2}<\omega_0$ \\ \\
+\noindent
+{\large \textbf{-Wellen}}\\ \\
+Transversalwellen = Schwingungsrichtung liegt senkrecht zur Ausbreitungsrichtung der Welle(Lichtwelle/elektromagntische Wellen)\\
+Longitudinalewellen = Schwingungsrichtung gleich Ausbreitungsrichtung (Schallwellen Hörbar 16Hz - 20kHz)\\
+Ausbreitungsgeschwindigkeit = $c=\frac{\bigtriangleup x}{\bigtriangleup t}$\\
+Ortsbild = Feste Zeit! \\
+Zeitbild = Fester Ort! \\
+Bewegungsgleichung = $y(x,t) = \hat{y}sin(\omega t -kx + \phi_0)$ - 
+Wellenzahl k,$[k] = \frac{1}{m}$\\
+Wellenlänge = $\lambda = \frac{2\pi}{k}$\\
+Kreisfrequenz = $\omega = 2\pi f = \frac{2\pi}{T}$ \\
+Phasengeschwindigkeit = $c=f\lambda = \frac{\lambda}{T} = \frac{\omega}{k}$\\
+Ausbreitung auf einem Seil = $c = \sqrt{\frac{F_s}{\mu}} = \sqrt{\frac{F_s}{pA}}$  mit $\mu =\frac{m}{l}$\\ \\
+\noindent
+Allgemeine Wellengleichung = $\frac{\partial^2y}{\partial x^2}=\frac{1}{c^2} \frac{\partial^2y}{\partial t^2}$
+\end{document}
